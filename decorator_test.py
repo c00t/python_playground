@@ -1,3 +1,5 @@
+import functools
+
 def do_twice(func):
     def wrapper():
         func()
@@ -29,6 +31,7 @@ print_wee_with_args('123')
 
 
 def do_twice_args_rets(func):
+    @functools.wraps(func)
     def wrapper(*args,**kwargs):
         func(*args,**kwargs)
         return func(*args,**kwargs)
@@ -43,3 +46,4 @@ def print_name(name):
 
 hi_name = print_name('456')
 print(hi_name)
+print(print_name)
