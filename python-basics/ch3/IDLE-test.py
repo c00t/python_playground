@@ -7,3 +7,7 @@ print(greeting)
 
 # violate PEP8
 mixedSomeCase = 1
+
+prompt = "Hey, what's up?\n"
+user_input = input(prompt)
+print("You said: " + user_input.upper() + ",characters counts: ", len(user_input))

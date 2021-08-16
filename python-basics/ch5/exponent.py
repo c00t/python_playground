@@ -1,0 +1,5 @@
+number1 = input("Enter a base:")
+number2 = input("Enter an exponent:")
+number1 = float(number1)
+number2 = float(number2)
+print(f"{number1} to the power of {number2} = {number1 ** number2}")
