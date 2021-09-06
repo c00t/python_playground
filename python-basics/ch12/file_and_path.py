@@ -29,3 +29,25 @@ print(f"Existed or not?{file_path.exists()}")
 print("Name is:" + file_path.name)
 print("Parent folder name:" + file_path.parent.name)
 
+print("--Create a file in cwd()/zzz.txt")
+new_file_path = pathlib.Path.cwd() / "zzz.txt"
+# new_file_path.touch(exist_ok=True)
+
+for path in some_path.iterdir():
+    print(path)
+
+print("-----")
+for path in new_file_path.parent.glob("*.txt"):
+    print(path)
+# for path in new_file_path.parent.glob("z?+.txt"):
+#     print(path)
+
+for path in new_file_path.parent.parent.rglob("*.py"):
+    print(path)
+
+replace_filename = new_file_path.parent / "xxx.txt"
+# new_file_path.replace(replace_filename)
+
+# 文件夹不存在的时候，同样会报出Error
+# not_exist_folder = pathlib.Path.cwd() / "folder_a" / "xxx.txt"
+# replace_filename.replace(not_exist_folder)
